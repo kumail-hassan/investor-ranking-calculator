@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+
+/////////////////////////////////////////////////////////////////////////////////
+
+
+function totalAssets() {
+
+
+
+let assetIdentified = parseInt(prompt('How many assets does this investor have?'));
+
+
+let totalValueOfAssets = 0;
+
+for (assetCounted=1;assetCounted<=assetIdentified;assetCounted++) {
+	
+	let individualAssetValue =  parseFloat(prompt('What is the value of asset '+ assetCounted + '?'));
+	totalValueOfAssets = totalValueOfAssets + individualAssetValue
+	}
+	return totalValueOfAssets;
+
+
+
+}
+
+/////////////////////////////////////////////////////////////////////////////////
+
+
+function totalDebt() {
+
+
+
+let totalValueOfDebt = 0
+let debtCounted = 1
+let individualDebtValue = parseInt(prompt('What is the value of debt '+ debtCounted++ +'?'));
+
+while (individualDebtValue) {
+	totalValueOfDebt = totalValueOfDebt + individualDebtValue
+	individualDebtValue = parseInt(prompt('What is the value of debt '+ debtCounted++ +'?'));
+}
+return totalValueOfDebt
+
+	
+
+
+
+}
+
+/////////////////////////////////////////////////////////////////////////////////
+
+
+function calculateInvestorRanking(investmentAmount, annualIncome, assets, debts) {
+
+
+
+let investmentRanking
+
+if (debts>assets) {
+	investmentRanking = "0. This investor is clearly broke!"
+}
+else if ((assets-debts)<investmentAmount) {
+	investmentRanking = "0. They clearly don't have the financial assets to make this kind of investment!"
+}
+else if ((assets-debts-investmentAmount)>annualIncome) {
+	investmentRanking = (assets - debts - investmentAmount)
+}
+else {
+	investmentRanking = annualIncome;
+}
+
+return investmentRanking
+	
+/////////////////////////////////////////////////////////////////////////////////
+
+}
+
+
+let investmentAmount = prompt('How much is the proposed investment? ');
+let annualIncome = prompt('What if the annual income of the proposed investor? ');
+let assets = totalAssets();
+let debts = totalDebt();
+let investorScore = calculateInvestorRanking(investmentAmount, annualIncome, assets, debts);
+
+alert('The investor score is ' + investorScore);
+
+</script>
+</body>
+</html>
