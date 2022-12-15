@@ -32,13 +32,13 @@ is passed four parameters.  These four parameters are:
 
 Using these four pieces of information, calculateInvestorRanking will return an "investor 
 score" based on the following rules:
-  1) If the prospective investor's debts are greater than their assets then the investor 
+1) If the prospective investor's debts are greater than their assets then the investor 
     score is 0 because this investor is clearly broke.
-  2) If the difference between the investor's assets and the investor's debts (assets-debts)  
+2) If the difference between the investor's assets and the investor's debts (assets-debts)  
     is less than the investment amount then the investor score is 0 because, while this investor 
     isn't broke, they clearly don't have the financial assets to make this kind of investment.
-  3) After subtracting debts and the proposed investment from assets, the investor   
+3) After subtracting debts and the proposed investment from assets, the investor   
     needs money to live on.  If the balance of their assets 
     (total assets - total debts - proposed investment) is greater than annual income, the investor score would 
     be (total assets - total debts - proposed investment).
-
+    
